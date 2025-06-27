@@ -1,0 +1,46 @@
+import streamlit as st
+import random
+
+st.set_page_config(page_title="Prediction Game", layout="centered")
+
+st.title("🔮 Prediction Game")
+
+game = st.sidebar.selectbox("Choose Game Mode", ["Color Prediction", "Number Prediction", "Big or Small"])
+
+# ---------- COLOR PREDICTION ----------
+if game == "Color Prediction":
+    st.header("🎨 Color Prediction Game")
+    colors = ['Red', 'Green', 'Blue', 'Yellow', 'Black', 'White']
+    user_color = st.selectbox("Select your color guess", colors)
+
+    if st.button("Predict Color"):
+        actual_color = random.choice(colors)
+        if user_color == actual_color:
+            st.success(f"🎉 Correct! It was {actual_color}")
+        else:
+            st.error(f"❌ Wrong! It was {actual_color}")
+
+# ---------- NUMBER PREDICTION ----------
+elif game == "Number Prediction":
+    st.header("🔢 Number Prediction Game")
+    number = st.number_input("Guess a number between 1 and 10", min_value=1, max_value=10, step=1)
+
+    if st.button("Predict Number"):
+        actual = random.randint(1, 10)
+        if number == actual:
+            st.success("🎉 Correct!")
+        else:
+            st.error(f"❌ Wrong! The number was {actual}")
+
+# ---------- BIG OR SMALL ----------
+elif game == "Big or Small":
+    st.header("🔺 Big or Small Game")
+    threshold = 5
+    guess = st.radio("Will the number be big (>5) or small (≤5)?", ["Big", "Small"])
+
+    if st.button("Predict Size"):
+        actual = random.randint(1, 10)
+        if (actual > threshold and guess == "Big") or (actual <= threshold and guess == "Small"):
+            st.success(f"🎉 Correct! It was {actual}")
+        else:
+            st.error(f"❌ Wrong! It was {actual}")
