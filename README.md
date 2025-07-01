@@ -20,9 +20,9 @@ An interactive mini-game app built using **Python** and **Streamlit** where user
 
 📂 File Structure
 
-streamlit-prediction-game/
+streamlit-guru_prediction/
 
--  prediction_game.py
+-  guru_prediction.py
  
 -  README.md
  
@@ -30,4 +30,4 @@ streamlit-prediction-game/
 
 ▶️ Run the App
 
--streamlit run prediction_game.py
+-streamlit run guru_prediction.py
