@@ -18,3 +18,16 @@ An interactive mini-game app built using **Python** and **Streamlit** where user
 - Python
 - Streamlit
 
+📂 File Structure
+
+streamlit-prediction-game/
+
+-  prediction_game.py
+ 
+-  README.md
+ 
+- requirements.txt
+
+▶️ Run the App
+
+-streamlit run prediction_game.py
